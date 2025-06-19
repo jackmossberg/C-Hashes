@@ -1,7 +1,10 @@
 #ifndef HASH_H
 #define HASH_H
 
+#include <stdio.h>
 #include <stdlib.h>
+
+#define H_API extern
 
 #define H_INT 0;
 #define H_BOOL 0;
@@ -38,14 +41,13 @@ typedef struct hcouple {
     void* value;
 } hcouple;
 
-void* hash_calloc(int ecount, tcouple hashtype);
-void* hash_malloc(int ecount, tcouple hashtype);
-void hash_dealloc(hash* thash);
+H_API hash* hash_calloc(int ecount, tcouple hashtype);
+H_API void hash_dealloc(hash* thash);
 
-void hash_push(hash* thash, hcouple htable);
-void hash_add(hash* thash, hcouple htable);
-void hash_insert(hash* thash, hcouple htable, int i);
-void* hash_getv(hash* thash, void* key);
-void* hash_getk(hash* thash, int i);
+H_API void hash_push(hash* thash, hcouple htable);
+H_API void hash_add(hash* thash, hcouple htable);
+H_API void hash_insert(hash* thash, hcouple htable, int i);
+H_API void* hash_getv(hash* thash, void* key);
+H_API void* hash_getk(hash* thash, int i);
 
 #endif //HASH_H

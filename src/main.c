@@ -17,6 +17,7 @@
 // hash_dealloc(hash* var); // void
 
 int main() {
+    hash var;
     printf("hello world!");
     return 0;
 }
