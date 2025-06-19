@@ -15,11 +15,11 @@
 typedef int (*vcomparator)(void* _v1, void* _v2);
 typedef int (*kcomparator)(int _v1, int _v2);
 
-typedef struct int_c { int _v; } int_c;
-typedef struct bool_c { int _v; } bool_c;
-typedef struct float_c { float _v; } float_c;
-typedef struct char_c { char _v; } char_c;
-typedef struct string_c { char* _v; } string_c;
+typedef struct int_c { int _v; size_t _s; } int_c;
+typedef struct bool_c { int _v; size_t _s; } bool_c;
+typedef struct float_c { float _v; size_t _s; } float_c;
+typedef struct char_c { char _v; size_t _s; } char_c;
+typedef struct string_c { char* _v; size_t _s; } string_c;
 
 typedef struct hash {
     void** keys;
