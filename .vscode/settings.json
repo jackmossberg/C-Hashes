@@ -1,5 +1,10 @@
 {
     "files.associations": {
-        "hash.h": "c"
+        "hash.h": "c",
+        "compare": "c",
+        "type_traits": "c",
+        "cstdlib": "c",
+        "stdio.h": "c",
+        "stdlib.h": "c"
     }
 }
