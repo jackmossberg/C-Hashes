@@ -7,6 +7,6 @@ int main() {
     hash* var = hash_calloc(5, T{INT, CHAR});
     hash_dealloc(var);
     
-    printf("hello world!");
+    printf("hello vro...");
     return 0;
 }

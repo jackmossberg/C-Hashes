@@ -167,6 +167,14 @@ API int fvalcomparator(void* _v1, void* _v2) {
     return 0; 
 }
 
+API int dkeycomparator(int _v1, int _v2) {
+    return 0;
+}
+
+API int dvalcomparator(void* _v1, void* _v2) {
+    return 0;
+}
+
 API int chkeycomparator(int _v1, int _v2) { 
     return 0; 
 }
