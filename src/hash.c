@@ -16,6 +16,7 @@ API int strvalcomparator(void* _v1, void* _v2);
 
 #define __POINTER_VALIDATE(ptr, rcode, vname) if (!ptr) {\
     printf("[%s] - Failure to allocate memory for '%s' on heap", _FL, vname);\
+    free(ptr);\
     return rcode;\
 }
 
@@ -120,8 +121,8 @@ hash* hash_malloc(int ecount, tcouple hashtype) {
 
 void hash_dealloc(hash* hash) {
     __ARG_VALIDATE(hash, , "hash")
-    __POINTER_VALIDATE(hash->keys, ,"hash->keys")
-    __POINTER_VALIDATE(hash->values, ,"hash->values")
+    __ARG_VALIDATE(hash->keys, ,"hash->keys")
+    __ARG_VALIDATE(hash->values, ,"hash->values")
     for (int i = 0; i < hash->size; i++){
         __POINTER_VALIDATE(hash->keys[i], ,"hash->keys[i]")
         free(hash->keys[i]);
@@ -130,6 +131,7 @@ void hash_dealloc(hash* hash) {
     }
     free(hash->keys);
     free(hash->values);
+    free(hash);
 }
 
 void hash_push(hash* hash, hcouple htable) {
@@ -159,13 +161,41 @@ void* hash_getk(hash* hash, int i) {
     return k;
 }
 
-API int ikeycomparator(int _v1, int _v2) {}
-API int ivalcomparator(void* _v1, void* _v2) {}
-API int bkeycomparator(int _v1, int _v2) {}
-API int bvalcomparator(void* _v1, void* _v2) {}
-API int fkeycomparator(int _v1, int _v2) {}
-API int fvalcomparator(void* _v1, void* _v2) {}
-API int chkeycomparator(int _v1, int _v2) {}
-API int chvalcomparator(void* _v1, void* _v2) {}
-API int strkeycomparator(int _v1, int _v2) {}
-API int strvalcomparator(void* _v1, void* _v2) {}
+API int ikeycomparator(int _v1, int _v2) { 
+    return 0; 
+}
+
+API int ivalcomparator(void* _v1, void* _v2) { 
+    return 0; 
+}
+
+API int bkeycomparator(int _v1, int _v2) { 
+    return 0; 
+}
+
+API int bvalcomparator(void* _v1, void* _v2) { 
+    return 0; 
+}
+
+API int fkeycomparator(int _v1, int _v2) { 
+    return 0; 
+}
+
+API int fvalcomparator(void* _v1, void* _v2) { 
+    return 0; 
+}
+
+API int chkeycomparator(int _v1, int _v2) { 
+    return 0; 
+}
+API int chvalcomparator(void* _v1, void* _v2) { 
+    return 0; 
+}
+
+API int strkeycomparator(int _v1, int _v2) { 
+    return 0; 
+}
+
+API int strvalcomparator(void* _v1, void* _v2) { 
+    return 0; 
+}

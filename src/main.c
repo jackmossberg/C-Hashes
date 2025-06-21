@@ -10,7 +10,7 @@ int main() {
 
     hash_dealloc(var);
     if (var == NULL) printf("hash deleted\n");
-
+    
     printf("hello world!");
     return 0;
 }
